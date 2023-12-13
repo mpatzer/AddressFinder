@@ -1,4 +1,27 @@
-# Address Finder by Patzer LLC
+# Apps by Patzer LLC
+
+## County Finder
+
+> **Boldly displays the county you're in and your current speed limit on a clear, interactive map.**
+>
+> _No more guesswork, no more scrambling for jurisdiction info._
+
+## Features
+
+- **Instant County Identification**: A glance tells you exactly where you stand, legally and geographically.
+- **Prominent Speed Limit Display**: Drive confidently knowing the exact speed limit wherever you roam.
+- **Interactive Map**: Explore your surroundings, zoom in for precision, and see your location in context.
+- **Simple Interface**: No clutter, just the information you need, fast and clear.
+
+## Benefits
+
+- **Law Enforcement and Emergency Services**: Quickly determine jurisdiction and respond efficiently.
+- **Land Surveyors**: Pinpoint property boundaries with pinpoint accuracy.
+- **Road Trip Enthusiasts**: Discover new counties, stay informed about changing speed limits.
+- **Anyone Navigating Unfamiliar Territory**: Know your local laws and drive safely.
+
+
+## Address Finder 
 
 > _Never forget your address again!_
 >
