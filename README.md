@@ -1,5 +1,47 @@
 # Apps by Patzer LLC
 
+## [Navigate to Photos](https://apps.apple.com/us/app/navigate-to-photos/id6737482353?at=11l599)
+
+> Find Picture Locations
+
+Navigate to Photo: Find Picture Locations
+
+Ever wanted to return to the exact spot where a photo was taken? Navigate to Photo uses your photo's GPS data to guide you back to any photographed location with precision.
+
+FEATURES:
+
+Compass-guided navigation shows the exact direction to your photo's location
+Real-time distance tracking tells you how far away you are
+Interactive map with photo thumbnail markers
+Turn-by-turn walking directions via Apple Maps
+Support for both metric and imperial measurements
+Simple, intuitive interface
+Works offline once photo is loaded
+Universal app optimized for iPhone and iPad
+
+PERFECT FOR:
+Photography - Return to your favorite shooting locations
+Hiking - Find scenic spots captured by others
+Sunset spots - Locate perfect photography viewpoints
+Beach access - Find that hidden path to the beach
+Camping - Return to previous campsites
+Foraging - Track your productive gathering spots
+Meeting points - Share exact photo locations with friends
+
+UNIQUE BENEFITS:
+
+No need to mark locations in advance
+Works with any photo containing GPS data
+Privacy-focused - no data collection or sharing
+No account required
+No internet needed for basic navigation
+
+Whether you're a photographer seeking that perfect spot again, a hiker returning to a scenic viewpoint, or simply trying to find a location from a shared photo, Navigate to Photo makes it simple to get there.
+
+Compatible with iPhone and iPad running iOS 17.0 or later.
+
+Note: Some photos may not contain GPS data.
+
 ## [Aces Up Solitaire](https://apps.apple.com/us/app/aces-up-solitaire/id6737347558?at=11l599)
 
 > Classic Solo Card Game
