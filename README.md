@@ -1,6 +1,6 @@
 # Apps by Patzer LLC
 
-## Aces Up Solitaire
+## [Aces Up Solitaire](https://apps.apple.com/us/app/aces-up-solitaire/id6737347558?at=11l599)
 
 > Classic Solo Card Game
 
