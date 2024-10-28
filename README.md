@@ -1,6 +1,48 @@
 # Apps by Patzer LLC
 
-## County Finder
+## Aces Up Solitaire
+
+> Classic Solo Card Game
+
+Experience the classic card game Aces Up Solitaire in this beautifully designed, easy-to-learn solo card game. Perfect for quick games or extended strategic sessions, Aces Up challenges you to clear the table using skill and strategy.
+
+CLASSIC GAMEPLAY
+- Simple to learn, engaging to master
+- Strategic decision-making with every move
+- Quick games perfect for short breaks
+- Clear and intuitive card movement
+- Smooth animations and haptic feedback
+
+HOW TO PLAY
+Start with four cards and strategically remove lower cards of the same suit, keeping the highest ones. Use empty spaces wisely to maneuver your cards. Win by having only the four Aces remaining!
+
+FEATURES
+- Elegant, felt-textured game table
+- Crisp, clear card designs
+- Simple drag-and-drop controls
+- Game statistics tracking
+- High score tracking
+- Designed for both iPhone and iPad
+
+UPGRADE TO PRO
+Take your Aces Up experience to the next level with Pro features:
+- Timed Mode: Challenge yourself against the clock
+- Custom Card Backs: Choose from multiple elegant designs
+- Table Themes: Select from various classic gaming table colors
+- More Pro features coming soon!
+
+Perfect for:
+- Solitaire enthusiasts
+- Card game lovers
+- Strategic puzzle solvers
+- Quick gaming sessions
+- Relaxing breaks
+
+Download now and join thousands of players enjoying this addictive card game classic. Free to play with optional Pro upgrade for enhanced features.
+
+Note: Aces Up Solitaire, also known as Ace Up or Four Cards, is a classic patience card game designed for single players. Our modern take on this timeless game maintains the original strategic gameplay while adding elegant design and smooth controls.
+
+## [County Finder](https://apps.apple.com/us/app/county-finder/id6474261068?at=11l599)
 
 > **Boldly displays the county you're in and your current speed limit on a clear, interactive map.**
 >
@@ -22,7 +64,7 @@
 
 ___
 
-## Address Finder 
+## [Address Finder](https://apps.apple.com/us/app/address-finder-my-location/id6474217892?at=11l599)
 
 > _Never forget your address again!_
 >
