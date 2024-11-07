@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Apps</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background: #f5f5f7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #1d1d1f;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #515154;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .app-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+        }
+
+        .app-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        .app-description {
+            color: #515154;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .screenshot-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            margin: 0 -1.5rem;
+            padding: 0 1.5rem;
+            scrollbar-width: none;
+        }
+
+        .screenshot-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .screenshot {
+            display: inline-block;
+            height: 400px;
+            margin-right: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-store-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #0071e3;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .app-store-link:hover {
+            background: #0077ed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Featured Apps</h1>
+            <p>Discover our carefully curated collection of must-have apps</p>
+        </div>
+        <div class="app-grid" id="appGrid"></div>
+    </div>
+
+    <script>
+        // Static list of App Store IDs
+        const APP_IDS = [
+            '6737347558',  // Aces Up Solitaire
+            '6474217892',  // Address Finder
+            '6474261068',  // County Finder
+            '6737482353'   // Navigate to Photos
+        ];
+
+        async function fetchAppData(appId) {
+            try {
+                const response = await fetch(`https://itunes.apple.com/lookup?id=${appId}`);
+                const data = await response.json();
+                return data.results[0];
+            } catch (error) {
+                console.error('Error fetching app data:', error);
+                return null;
+            }
+        }
+
+        function createAppCard(appData) {
+            const card = document.createElement('div');
+            card.className = 'app-card';
+
+            const header = document.createElement('div');
+            header.className = 'app-header';
+            header.innerHTML = `
+                <img class="app-icon" src="${appData.artworkUrl512 || appData.artworkUrl100}" alt="${appData.trackName}">
+                <div class="app-name">${appData.trackName}</div>
+            `;
+
+            const description = document.createElement('div');
+            description.className = 'app-description';
+            description.textContent = appData.description;
+
+            const screenshotContainer = document.createElement('div');
+            screenshotContainer.className = 'screenshot-container';
+            
+            appData.screenshotUrls.forEach(url => {
+                const screenshot = document.createElement('img');
+                screenshot.className = 'screenshot';
+                screenshot.src = url;
+                screenshot.alt = 'App Screenshot';
+                screenshotContainer.appendChild(screenshot);
+            });
+
+            const appStoreLink = document.createElement('a');
+            appStoreLink.href = appData.trackViewUrl;
+            appStoreLink.className = 'app-store-link';
+            appStoreLink.textContent = 'View in App Store';
+            appStoreLink.target = '_blank';
+
+            card.appendChild(header);
+            card.appendChild(description);
+            card.appendChild(screenshotContainer);
+            card.appendChild(appStoreLink);
+
+            return card;
+        }
+
+        async function loadApps() {
+            for (const appId of APP_IDS) {
+                const appData = await fetchAppData(appId);
+                if (appData) {
+                    const appCard = createAppCard(appData);
+                    document.getElementById('appGrid').appendChild(appCard);
+                }
+            }
+        }
+
+        // Load all apps when the page loads
+        document.addEventListener('DOMContentLoaded', loadApps);
+    </script>
+</body>
+</html>
