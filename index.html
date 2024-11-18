@@ -273,6 +273,23 @@
             }
         }
 
+        function getScreenshots(appData) {
+            // First try the new iOS 17+ format
+            if (appData.screenshotsByType) {
+                const iphoneScreenshots = appData.screenshotsByType['iphone6.5-iphone6.7'] || 
+                                        appData.screenshotsByType['iphone6.7'] ||
+                                        appData.screenshotsByType['iphone6.5'] ||
+                                        appData.screenshotsByType['iphone5.5'];
+                
+                if (iphoneScreenshots) {
+                    return iphoneScreenshots.map(screenshot => screenshot.url);
+                }
+            }
+            
+            // Fall back to the traditional format
+            return appData.screenshotUrls || [];
+        }
+
         function createAppCard(appData) {
             const card = document.createElement('div');
             card.className = 'app-card';
@@ -291,18 +308,18 @@
             const screenshotContainer = document.createElement('div');
             screenshotContainer.className = 'screenshot-container';
             
-            if (appData.screenshotUrls) {
-                appData.screenshotUrls.forEach(url => {
-                    const screenshot = document.createElement('img');
-                    screenshot.className = 'screenshot';
-                    screenshot.src = url;
-                    screenshot.alt = 'App Screenshot';
-                    screenshot.onerror = () => {
-                        screenshot.style.display = 'none';
-                    };
-                    screenshotContainer.appendChild(screenshot);
-                });
-            }
+            const screenshots = getScreenshots(appData);
+            screenshots.forEach(url => {
+                const screenshot = document.createElement('img');
+                screenshot.className = 'screenshot';
+                screenshot.src = url;
+                screenshot.alt = 'App Screenshot';
+                screenshot.onerror = () => {
+                    console.error(`Failed to load screenshot: ${url}`);
+                    screenshot.style.display = 'none';
+                };
+                screenshotContainer.appendChild(screenshot);
+            });
 
             const appStoreLink = document.createElement('a');
             appStoreLink.href = `${appData.trackViewUrl}${AFFILIATE_TAG}`;
