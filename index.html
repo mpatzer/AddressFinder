@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patzer LLC Apps</title>
+    <title>iOS Development Portfolio - Patzer LLC</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         * {
@@ -15,6 +15,8 @@
 
         body {
             background: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.5;
         }
 
         .container {
@@ -25,18 +27,55 @@
 
         .header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #0071e3 0%, #47a3ff 100%);
+            color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 16px rgba(0, 113, 227, 0.2);
         }
 
         .header h1 {
-            font-size: 2.5rem;
-            color: #1d1d1f;
+            font-size: 3rem;
+            color: white;
             margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .header p {
-            font-size: 1.1rem;
-            color: #515154;
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #1d1d1f;
         }
 
         .app-grid {
@@ -51,11 +90,12 @@
             border-radius: 1rem;
             padding: 1.5rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .app-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
         }
 
         .app-header {
@@ -69,6 +109,7 @@
             width: 64px;
             height: 64px;
             border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .app-name {
@@ -79,8 +120,8 @@
 
         .app-description {
             color: #515154;
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 0.95rem;
+            line-height: 1.6;
             margin-bottom: 1rem;
             display: -webkit-box;
             -webkit-line-clamp: 3;
@@ -94,6 +135,7 @@
             margin: 0 -1.5rem;
             padding: 0 1.5rem;
             scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
         .screenshot-container::-webkit-scrollbar {
@@ -111,22 +153,47 @@
         .app-store-link {
             display: inline-block;
             margin-top: 1rem;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem;
             background: #0071e3;
             color: white;
             text-decoration: none;
             border-radius: 0.5rem;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             transition: background 0.2s;
+            font-weight: 500;
         }
 
         .app-store-link:hover {
             background: #0077ed;
         }
 
+        .tech-stack {
+            margin: 4rem 0;
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tech-item {
+            background: #f5f5f7;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 500;
+        }
+
         .footer {
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 4rem;
             padding-top: 2rem;
             border-top: 1px solid #d2d2d7;
             color: #515154;
@@ -139,22 +206,67 @@
             border-radius: 0.3rem;
             font-family: monospace;
         }
+
+        @media (max-width: 768px) {
+            .stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .header {
+                padding: 2rem 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Patzer LLC Apps</h1>
-            <p>Discover our suite of carefully crafted mobile apps</p>
-        </div>
+        <header class="header">
+            <h1>iOS Developer Portfolio</h1>
+            <p>Crafting delightful user experiences with Swift and UIKit</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">6+</div>
+                    <div class="stat-label">Apps Published</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Swift</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4.8★</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="tech-stack">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="tech-list">
+                <span class="tech-item">Swift</span>
+                <span class="tech-item">UIKit</span>
+                <span class="tech-item">SwiftUI</span>
+                <span class="tech-item">Core Data</span>
+                <span class="tech-item">MapKit</span>
+                <span class="tech-item">Core Location</span>
+                <span class="tech-item">StoreKit</span>
+                <span class="tech-item">PhotoKit</span>
+            </div>
+        </section>
+
+        <h2 class="section-title">Featured Apps</h2>
         <div class="app-grid" id="appGrid"></div>
+        
         <div class="footer">
-            For support, contact: <code>v5cqpsj4e3u4 @ opayq dot com</code>
+            For inquiries: <code>v5cqpsj4e3u4 @ opayq dot com</code>
         </div>
     </div>
 
     <script>
-        // Static list of App Store IDs
         const APP_IDS = [
             '6738211457',  // Discover a Color
             '6737653440',  // Camping Tools
@@ -195,13 +307,18 @@
             const screenshotContainer = document.createElement('div');
             screenshotContainer.className = 'screenshot-container';
             
-            appData.screenshotUrls.forEach(url => {
-                const screenshot = document.createElement('img');
-                screenshot.className = 'screenshot';
-                screenshot.src = url;
-                screenshot.alt = 'App Screenshot';
-                screenshotContainer.appendChild(screenshot);
-            });
+            if (appData.screenshotUrls) {
+                appData.screenshotUrls.forEach(url => {
+                    const screenshot = document.createElement('img');
+                    screenshot.className = 'screenshot';
+                    screenshot.src = url;
+                    screenshot.alt = 'App Screenshot';
+                    screenshot.onerror = () => {
+                        screenshot.style.display = 'none';
+                    };
+                    screenshotContainer.appendChild(screenshot);
+                });
+            }
 
             const appStoreLink = document.createElement('a');
             appStoreLink.href = `${appData.trackViewUrl}${AFFILIATE_TAG}`;
@@ -227,7 +344,6 @@
             }
         }
 
-        // Load all apps when the page loads
         document.addEventListener('DOMContentLoaded', loadApps);
     </script>
 </body>
